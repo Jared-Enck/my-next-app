@@ -16,6 +16,11 @@ body {
   overflow-x: hidden;
 }
 
+.app-container {
+  height: calc(100svh - 64px);
+  overflow: auto;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

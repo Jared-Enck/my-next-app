@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ButtonAppBar from "./appbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,9 +25,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <ButtonAppBar />
+
+        <div className="app-container">
+          {children}
+        </div>
       </body>
     </html>
   );
